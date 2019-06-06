@@ -27,8 +27,8 @@ resource "aws_autoscaling_group" "worker" {
   launch_configuration      = "${aws_launch_configuration.worker.name}"
   min_size                  = "${var.worker["min_size"]}"
   max_size                  = "${var.worker["max_size"]}"
-  desired_capacity          = "${var.worker["desired_capacity"]}"
-  wait_for_elb_capacity     = "${var.worker["desired_capacity"]}"
+  desired_capacity          = "${var.workers_desired_capacity}"
+  wait_for_elb_capacity     = "${var.workers_desired_capacity}"
   vpc_zone_identifier       = ["${var.vpc_subnets}"]
   wait_for_capacity_timeout = "10m"
   lifecycle {

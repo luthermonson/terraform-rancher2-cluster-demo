@@ -17,7 +17,7 @@ variable "worker" {
     "instance_type"    = "m5.large"
   }
 }
-
+variable "workers_desired_capacity" {}
 variable "node_command" {}
 variable "cluster_name" {}
 variable "aws_region" {}
