@@ -13,7 +13,7 @@ resource "aws_launch_configuration" "master" {
   user_data            = "${data.template_file.master-user_data.rendered}"
   key_name             = "${var.keyname}"
   enable_monitoring    = false
-  security_groups      = "${var.default_security_groups}"
+  security_groups      = ["${var.default_security_groups}"]
   iam_instance_profile = "${var.instance_profile}"
 
   lifecycle {
@@ -29,7 +29,7 @@ resource "aws_autoscaling_group" "master" {
   max_size                  = "${var.master["max_size"]}"
   desired_capacity          = "${var.master["desired_capacity"]}"
   wait_for_elb_capacity     = "${var.master["desired_capacity"]}"
-  vpc_zone_identifier       = "${var.vpc_subnets}"
+  vpc_zone_identifier       = ["${var.vpc_subnets}"]
   wait_for_capacity_timeout = "10m"
   lifecycle {
     create_before_destroy = true

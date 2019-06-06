@@ -28,12 +28,6 @@ variable "vpc_name" {}
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
-variable "vpc_subnets" {
-  type    = "list"
-  default = []
-}
+variable "vpc_subnets" {}
 
-variable "default_security_groups" {
-  type    = "list"
-  default = []
-}
+variable "default_security_groups" {}
