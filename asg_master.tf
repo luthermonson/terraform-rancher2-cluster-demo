@@ -42,7 +42,7 @@ resource "aws_autoscaling_group" "master" {
   }
   tag {
     key                 = "Name"
-    value               = "${var.vpc_name}-worker"
+    value               = "${var.vpc_name}-master"
     propagate_at_launch = true
   }
   #depends_on = ["rancher2_cluster.rke"]

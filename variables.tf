@@ -18,16 +18,16 @@ variable "worker" {
   }
 }
 
-variable "node_commmand" {}
+variable "node_command" {}
 variable "cluster_name" {}
 variable "aws_region" {}
 variable "instance_profile" {}
 variable "vpc_id" {}
 variable "keyname" {}
 variable "vpc_name" {}
-variable "rancher_api_url" {}
-variable "rancher2_access_key" {}
-variable "rancher2_secret_key" {}
+# variable "rancher_api_url" {}
+# variable "rancher2_access_key" {}
+# variable "rancher2_secret_key" {}
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
