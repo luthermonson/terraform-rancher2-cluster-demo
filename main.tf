@@ -23,20 +23,3 @@ data "aws_ami" "ubuntu" {
 
   owners = ["099720109477"] # Canonical
 }
-
-# provider "rancher2" {
-#   api_url    = "${var.rancher_api_url}"
-#   access_key = "${var.rancher2_access_key}"
-#   secret_key = "${var.rancher2_secret_key}"
-# }
-
-# resource "rancher2_cluster" "rke" {
-#   name        = "demo-cluster"
-#   description = "TF created rke cluster"
-
-#   rke_config {
-#     cloud_provider {
-#       name = "aws"
-#     }
-#   }
-# }
