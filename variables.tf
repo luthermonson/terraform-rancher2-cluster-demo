@@ -1,6 +1,6 @@
 variable "desired_capacity" {}
 variable "instance_type" {
-  default = "t3.medium"
+  default = "t2.medium"
 }
 variable "node_command" {}
 variable "roles" {}
