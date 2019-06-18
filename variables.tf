@@ -1,4 +1,7 @@
 variable "desired_capacity" {}
+variable "instance_type" {
+  default = "t3.medium"
+}
 variable "node_command" {}
 variable "roles" {}
 variable "pool_name" {}

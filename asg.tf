@@ -10,7 +10,7 @@ data "template_file" "user_data" {
 resource "aws_launch_configuration" "lc" {
   name_prefix          = "${var.pool_name}-"
   image_id             = "${data.aws_ami.ubuntu.image_id}"
-  instance_type        = "${var.master["instance_type"]}"
+  instance_type        = "${var.instance_type}"
   user_data            = "${data.template_file.user_data.rendered}"
   key_name             = "${var.keyname}"
   enable_monitoring    = false
@@ -23,7 +23,7 @@ resource "aws_launch_configuration" "lc" {
   #depends_on = ["rancher2_cluster.rke"]
 }
 
-resource "aws_autoscaling_group" "master" {
+resource "aws_autoscaling_group" "asg" {
   name                      = "${aws_launch_configuration.lc.name}"
   launch_configuration      = "${aws_launch_configuration.lc.name}"
   min_size                  = "1"
@@ -43,7 +43,7 @@ resource "aws_autoscaling_group" "master" {
   }
   tag {
     key                 = "Name"
-    value               = "${var.vpc_name}-master"
+    value               = "${var.pool_name}"
     propagate_at_launch = true
   }
   #depends_on = ["rancher2_cluster.rke"]
