@@ -9,7 +9,6 @@ variable "aws_region" {}
 variable "instance_profile" {}
 variable "vpc_id" {}
 variable "keyname" {}
-variable "vpc_name" {}
 variable "aws_access_key" {}
 variable "aws_secret_key" {}
 
