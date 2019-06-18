@@ -8,7 +8,7 @@ data "template_file" "user_data" {
 }
 
 resource "aws_launch_configuration" "lc" {
-  name_prefix          = "${var.poolname}-"
+  name_prefix          = "${var.pool_name}-"
   image_id             = "${data.aws_ami.ubuntu.image_id}"
   instance_type        = "${var.master["instance_type"]}"
   user_data            = "${data.template_file.user_data.rendered}"
@@ -37,7 +37,7 @@ resource "aws_autoscaling_group" "master" {
   }
 
   tag {
-    key                 = "kubernetes.io/cluster/${var.poolname}"
+    key                 = "kubernetes.io/cluster/${var.pool_name}"
     value               = ""
     propagate_at_launch = true
   }
