@@ -1,25 +1,7 @@
-variable "master" {
-  type = "map"
-  default = {
-    "min_size"         = "1"
-    "max_size"         = "1"
-    "desired_capacity" = "1"
-    "instance_type"    = "m5.large"
-  }
-}
-
-variable "worker" {
-  type = "map"
-  default = {
-    "min_size"         = "2"
-    "max_size"         = "2"
-    "desired_capacity" = "2"
-    "instance_type"    = "m5.large"
-  }
-}
-variable "workers_desired_capacity" {}
+variable "desired_capacity" {}
 variable "node_command" {}
-variable "cluster_name" {}
+variable "roles" {}
+variable "pool_name" {}
 variable "aws_region" {}
 variable "instance_profile" {}
 variable "vpc_id" {}
