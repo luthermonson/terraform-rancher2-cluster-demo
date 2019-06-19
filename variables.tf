@@ -4,6 +4,7 @@ variable "instance_type" {
 }
 variable "node_command" {}
 variable "roles" {}
+variable "labels" {}
 variable "pool_name" {}
 variable "aws_region" {}
 variable "instance_profile" {}

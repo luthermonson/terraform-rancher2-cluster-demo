@@ -4,6 +4,7 @@ data "template_file" "user_data" {
   vars = {
     node_command = "${var.node_command}"
     roles = "${var.roles}"
+    labels = "${var.labels}"
   }
 }
 
