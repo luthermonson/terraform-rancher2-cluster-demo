@@ -1,9 +1,9 @@
 data "aws_vpc" "vpc" {
-  id = "${var.vpc_id}"
+  id = "${var.vpcId}"
 }
 
 provider "aws" {
-  region     = "${var.aws_region}"
+  region     = "${var.region}"
   access_key = "${var.accessKey}"
   secret_key = "${var.secretKey}"
 }
