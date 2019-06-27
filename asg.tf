@@ -16,7 +16,7 @@ resource "aws_launch_configuration" "lc" {
   key_name             = "${var.keypairName}"
   enable_monitoring    = false
   security_groups      = ["${var.securityGroup}"]
-  iam_iamInstanceProfile = "${var.iamInstanceProfile}"
+  iam_instance_profile = "${var.iamInstanceProfile}"
 
   lifecycle {
     create_before_destroy = true
