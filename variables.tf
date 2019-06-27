@@ -10,8 +10,8 @@ variable "aws_region" {}
 variable "instance_profile" {}
 variable "vpc_id" {}
 variable "keyname" {}
-variable "aws_access_key" {}
-variable "aws_secret_key" {}
+variable "accessKey" {}
+variable "secretKey" {}
 
 variable "vpc_subnets" {}
 
